@@ -1,0 +1,37 @@
+﻿<UserControl x:Class="LibraryApp.Views.UserControls.HomeUC"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:LibraryApp.Views.UserControls"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+            <Label Foreground="{StaticResource mainColor}"
+                   FontSize="60" FontWeight="ExtraBlack" FontFamily="Comic Sans MS"
+                   >Book Library</Label>
+            <TextBlock Foreground="{StaticResource mainColor}"
+                       FontSize="20" FontWeight="Black" FontFamily="Comic Sans MS"
+                       >Find Any Books</TextBlock>
+            <StackPanel Orientation="Horizontal">
+                <Button Command="{Binding SelectLibrarianCommand}"
+                        Foreground="{StaticResource mainColor}"
+                        Width="200"
+                        Margin="0,20,20,20"
+                        FontSize="30"
+                        Background="Transparent"
+                        Style="{StaticResource myButtonStyle}"
+                        >Librarian</Button>
+                <Button Command="{Binding SelectStudentCommand}"
+                        Foreground="{StaticResource mainColor}"
+                        Width="200"
+                        Margin="20"
+                        FontSize="30"
+                        Background="Transparent"
+                        Style="{StaticResource myButtonStyle}"
+                        >Student</Button>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</UserControl>
