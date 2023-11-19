@@ -29,11 +29,12 @@
             <Button FontSize="30" FontWeight="ExtraBlack" Foreground="{StaticResource mainColor}"
                     Style="{StaticResource myButtonStyle}" Content="Show All Rents"
                     Background="Transparent"
+                   
                     ></Button>
 
             <Button FontSize="30" FontWeight="ExtraBlack" Foreground="{StaticResource mainColor}"
                     Style="{StaticResource myButtonStyle}" Content="Register Student"
-                    Background="Transparent"
+                    Background="Transparent"  Command="{Binding RegisterStudentCommand}"
                     ></Button>
             <Button FontSize="30" FontWeight="ExtraBlack" Foreground="{StaticResource mainColor}"
                     Style="{StaticResource myButtonStyle}" Content="Rent Book"
