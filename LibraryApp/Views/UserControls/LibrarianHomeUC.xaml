@@ -38,6 +38,7 @@
                     ></Button>
             <Button FontSize="30" FontWeight="ExtraBlack" Foreground="{StaticResource mainColor}"
                     Style="{StaticResource myButtonStyle}" Content="Rent Book"
+                    Command="{Binding RentBookCommand}"
                     Background="Transparent"
                     ></Button>
 

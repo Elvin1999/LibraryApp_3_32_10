@@ -17,6 +17,7 @@ namespace LibraryApp
         public static Grid MyGrid;
         public static int GlobalId = 1;
         public static readonly string BookFileName = "books.json";
+        public static readonly string RentFileName = "rents.json";
         public static readonly string StudentFileName = "students.json";
     }
 }

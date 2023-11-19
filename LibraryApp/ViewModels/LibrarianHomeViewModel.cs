@@ -14,9 +14,19 @@ namespace LibraryApp.ViewModels
         public RelayCommand ShowAllCommand { get; set; }
         public RelayCommand AddBookCommand { get; set; }
         public RelayCommand RegisterStudentCommand { get; set; }
+        public RelayCommand RentBookCommand { get; set; }
 
         public LibrarianHomeViewModel()
         {
+            RentBookCommand = new RelayCommand((obj) =>
+            {
+                var vm = new RentViewModel();
+                var view = new RentUC();
+                view.DataContext = vm;
+
+                App.MyGrid.Children.Clear();
+                App.MyGrid.Children.Add(view);
+            });
 
             RegisterStudentCommand = new RelayCommand((obj) =>
             {

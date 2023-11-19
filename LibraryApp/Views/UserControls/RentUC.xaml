@@ -1,0 +1,70 @@
+﻿<UserControl x:Class="LibraryApp.Views.UserControls.RentUC"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:LibraryApp.Views.UserControls" xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
+             mc:Ignorable="d" 
+             d:DesignHeight="550" d:DesignWidth="900" Width="900">
+    <StackPanel>
+        <Button FontSize="30" FontWeight="ExtraBlack" Foreground="{StaticResource mainColor}"
+                    Style="{StaticResource myButtonStyle}" Content="Back" Margin="10,10,0,0"
+                    Background="Transparent" HorizontalAlignment="Left"
+                Command="{Binding BackCommand}"
+                Padding="10,0"
+                    ></Button>
+        <StackPanel>
+            <Label FontSize="10" Foreground="{StaticResource mainColor}">Search any book</Label>
+            <TextBox Height="30" Width="900" 
+                     Text="{Binding SearchBookText,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" 
+                     FontSize="18" Foreground="{StaticResource mainColor}">
+                <i:Interaction.Triggers>
+                    <i:EventTrigger EventName="TextChanged">
+                        <i:InvokeCommandAction Command="{Binding SearchBookCommand}"/>
+                    </i:EventTrigger>
+                </i:Interaction.Triggers>
+            </TextBox>
+            <Label FontSize="15" Foreground="{StaticResource mainColor}" Content="{Binding SelectedBook.Title,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"></Label>
+            <DataGrid ItemsSource="{Binding AllBooks}" 
+                  SelectedItem="{Binding SelectedBook,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}">
+
+            </DataGrid>
+
+            <Label FontSize="10" Foreground="{StaticResource mainColor}">Search any student</Label>
+            <TextBox Height="30" Width="900" 
+                     Text="{Binding SearchStudentText,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" 
+                     FontSize="18" Foreground="{StaticResource mainColor}">
+                <i:Interaction.Triggers>
+                    <i:EventTrigger EventName="TextChanged">
+                        <i:InvokeCommandAction Command="{Binding SearchStudentCommand}"/>
+                    </i:EventTrigger>
+                </i:Interaction.Triggers>
+            </TextBox>
+            <Label FontSize="15" Foreground="{StaticResource mainColor}" Content="{Binding SelectedStudent.Fullname,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"></Label>
+            <DataGrid ItemsSource="{Binding AllStudents}" 
+                  SelectedItem="{Binding SelectedStudent,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}">
+
+            </DataGrid>
+            <StackPanel Orientation="Horizontal" Margin="10">
+            <Label FontSize="15" Foreground="{StaticResource mainColor}" Content="Select Day"></Label>
+                <TextBox Height="30" Width="100" HorizontalAlignment="Left"
+                     Text="{Binding SelectedDay,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" 
+                     FontSize="18" Foreground="{StaticResource mainColor}">
+                
+                </TextBox>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                <Label FontSize="22" FontWeight="ExtraBlack" Foreground="{StaticResource mainColor}"
+                       Content="{Binding TotalPrice,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
+                       ></Label>
+            <Label FontSize="22" FontWeight="ExtraBlack" Foreground="{StaticResource mainColor}">$</Label>
+            </StackPanel>
+            <Button FontSize="30" FontWeight="ExtraBlack" Foreground="{StaticResource mainColor}"
+                    Style="{StaticResource myButtonStyle}" Content="Submit" Margin="10,10,0,0"
+                    Background="Transparent" HorizontalAlignment="Left"
+                Command="{Binding SubmitCommand}"
+                Padding="10,0"
+                    ></Button>
+        </StackPanel>
+    </StackPanel>
+</UserControl>
